@@ -29,7 +29,7 @@ function operation() {
 
     }
     else if (action === 'Sair') {
-        console.log(chalk.bgBlue.black("Obrigado por usar o Accounts"))
+        console.log("Obrigado por usar o Accounts")
         process.exit()
     }
 })
@@ -40,8 +40,8 @@ function operation() {
 
 // create an account
 function createAccount() {
-    console.log(chalk.bgGreen.black('Parabens por escolher nosso banco'))
-    console.log(chalk.bgGreen.black('Defina as opções da sua conta'))
+    console.log('Parabens por escolher nosso banco')
+    console.log('Defina as opções da sua conta')
 
     buildAccount()
 }
@@ -63,9 +63,8 @@ function buildAccount() {
         }
 
         if (fs.existsSync(`accounts/${accountName}.json`)) {
-            console.log(
-                chalk.brRed.black('Esta conta já existe, escolha outro nome')
-            )
+            console.log('Esta conta já existe, escolha outro nome')
+            
             buildAccount()
             return
         }
@@ -76,7 +75,7 @@ function buildAccount() {
         },
        )
 
-        console.log(chalk.green('Conta criada com sucesso')),
+        console.log('Conta criada com sucesso')
         operation()
         
     })
